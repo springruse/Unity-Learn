@@ -25,7 +25,8 @@ public class Spawner : MonoBehaviour
             Vector3 position = transform.position;
             position.x += Random.Range(-5.0f, 5.0f);
             position.z += Random.Range(-5.0f, 5.0f);
-            Instantiate(spawnObject, position, transform.rotation);
+            var go = Instantiate(spawnObject, position, transform.rotation);
+            Destroy(go,4.0f);
         }
         
     }
