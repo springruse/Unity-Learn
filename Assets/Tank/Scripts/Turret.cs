@@ -7,7 +7,7 @@ public class Turret : MonoBehaviour
     [SerializeField] float fireRate = 1.0f;
     [SerializeField] Ammo ammo;
     [SerializeField] Transform muzzle;
-
+    
     float firetimer = 0.0f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
