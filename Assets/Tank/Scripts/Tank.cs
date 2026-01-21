@@ -1,16 +1,21 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class Tank : MonoBehaviour
 {
     [SerializeField] float speed = 5.0f;
     [SerializeField] float rotationSpeed = 90.0f; // rotation in degrees per second
-
+    
     [SerializeField] GameObject ammo;
     [SerializeField] GameObject muzzle;
 
+    [SerializeField] Slider healthBar;
+
     InputAction moveAction;
     InputAction fireAction;
+
+    Health health;
 
     void Start()
     {
@@ -18,6 +23,7 @@ public class Tank : MonoBehaviour
         fireAction = InputSystem.actions.FindAction("Attack");
 
         fireAction.started += ctx => OnAttack();
+        health = GetComponent<Health>();
     }
 
     void Update()
@@ -34,6 +40,8 @@ public class Tank : MonoBehaviour
 
         // rotate the tank, around the up axis (y-axis)
         transform.Rotate(Vector3.up * rotation * rotationSpeed * Time.deltaTime);
+
+        healthBar.value = health.CurrentHealthPercentage;
 
     }
     void OnAttack()

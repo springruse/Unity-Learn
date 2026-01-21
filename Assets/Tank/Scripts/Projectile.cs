@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Rocket : Ammo
+public class Projectile : Ammo
 {
     [SerializeField] float speed = 1.0f;
     [SerializeField] GameObject effect;
@@ -15,10 +15,6 @@ public class Rocket : Ammo
 
     void Update()
     {
-        if (Keyboard.current.spaceKey.isPressed)
-        {
-            Console.WriteLine("Space key is being held down.");
-        }
     }
 
     private void OnCollisionEnter(Collision collision)

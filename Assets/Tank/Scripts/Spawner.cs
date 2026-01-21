@@ -4,7 +4,6 @@ using UnityEngine.InputSystem;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] float time = 1.0f;
     [SerializeField] GameObject spawnObject;
 
     private void Awake()
