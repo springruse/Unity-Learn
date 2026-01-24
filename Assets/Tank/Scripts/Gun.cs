@@ -12,7 +12,7 @@ public class Gun : MonoBehaviour
     public int AmmoCount
     {
         get { return ammoCount; }
-        set {AmmoCount = Mathf.Clamp(value, 0, maxAmmoCount); }
+        set {ammoCount = Mathf.Clamp(value, 0, maxAmmoCount); }
     }
 
     public bool IsReadyToFire { get; set; } = true;
